@@ -1,0 +1,33 @@
+﻿@model List<TravelTripProje.Models.Sınıflar.Yorumlar>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_AdminLayout.cshtml";
+}
+
+<h2>Yorum Listesi</h2>
+
+<table class="table table-bordered">
+    <tr>
+        <th>ID</th>
+        <th>KULLANICI</th>
+        <th>MAİL</th>
+        <th>YORUM</th>
+        <th>SİL</th>
+        <th>GÜNCELLE</th>
+    </tr>
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>@item.ID</td>
+            <td>@item.KullaniciAdi</td>
+            <td>@item.Mail</td>
+            <td>@item.Yorum</td>
+            <td><a href="/Yorum/YorumSil/@item.ID" class="btn btn-danger">Sil</a></td>
+            <td><a href="/Yorum/YorumGetir/@item.ID" class="btn btn-success">Güncelle</a></td>
+        </tr>
+    }
+
+</table>
+
+
